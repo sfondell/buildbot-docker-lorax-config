@@ -6,7 +6,7 @@ services:
       - db.env
     environment:
       - BUILDBOT_CONFIG_DIR=config
-      - BUILDBOT_CONFIG_URL=https://github.com/sfondell/buildbot-docker-example-config/archive/master.tar.gz
+      - BUILDBOT_CONFIG_URL=https://github.com/sfondell/buildbot-docker-lorax-config/archive/master.tar.gz
       - BUILDBOT_WORKER_PORT=9989
       - BUILDBOT_WEB_URL=http://localhost:8010/
       - BUILDBOT_WEB_PORT=tcp:port=8010
@@ -24,7 +24,7 @@ services:
       - 5432
 
   worker:
-    image: "npm-worker:latest"
+    image: "pyworker:latest"
     environment:
       BUILDMASTER: buildbot
       BUILDMASTER_PORT: 9989
